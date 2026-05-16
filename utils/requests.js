@@ -1,4 +1,8 @@
-const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
+// const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
+const apiDomain =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000/api'
+    : process.env.NEXT_PUBLIC_API_DOMAIN;
 
 const fetchProperties = async () => {
     try {
